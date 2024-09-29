@@ -1,0 +1,27 @@
+<ion-content class="login-background">
+  <app-header></app-header>
+
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+
+    <ion-item>
+      <ion-label position="floating">Nombre de Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="clave"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="iniciarSesion()">Iniciar Sesión</ion-button>
+
+
+    <div class="recover-password">
+      <a [routerLink]="['/recuperar-contrasena']">¿Olvidaste tu contraseña?</a>
+    </div>
+    <p *ngIf="mensajeError" style="color: red;">{{ mensajeError }}</p>
+  </div>
+
+  <app-footer></app-footer>
+</ion-content>
